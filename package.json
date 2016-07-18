@@ -1,0 +1,48 @@
+{
+  "name": "fm-ember",
+  "version": "1.0.0",
+  "description": "ember",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "\"npm run dev\"",
+    "dev": "grunt",
+    "lite-cli": "npm install -g lite-server",
+    "lite": "lite-server"
+  },
+  "keywords": [
+    "fm-ember",
+    "ember"
+  ],
+  "homepage": "https://ifootmark.github.io/fm-ember/",
+  "bugs": {
+    "url": "https://github.com/ifootmark/fm-ember/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifootmark/fm-ember.git"
+  },
+  "author": "ifootmark@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "devDependencies": {
+    "ember-data": "2.6.1",
+    "ember-inflector": "^1.9.4",
+    "fm-indexeddb": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-ember-templates": "^1.0.0",
+    "grunt-es6-module-transpiler": "^0.6.0"
+  },
+  "maintainers": [
+    {
+      "name": "ifootmark",
+      "email": "ifootmark@163.com"
+    }
+  ]
+}

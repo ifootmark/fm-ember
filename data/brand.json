@@ -1,0 +1,29 @@
+{
+    "list":[
+        {
+            "id":1,
+            "brandLogo":"宝马",
+            "brandName":"宝马",
+            "brandCode":"BMW",
+            "country":"德国",
+            "remark":"good"
+        },
+        {
+            "id":2,
+            "brandLogo":"奔驰",
+            "brandName":"奔驰",
+            "brandCode":"Benz",
+            "country":"德国",
+            "remark":"good"
+        }
+        ,
+        {
+            "id":3,
+            "brandLogo":"奥迪",
+            "brandName":"奥迪",
+            "brandCode":"Audi",
+            "country":"德国",
+            "remark":"good"
+        }
+    ]
+}

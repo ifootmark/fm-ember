@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            {{#link-to 'index' class='navbar-brand'}}Brands{{/link-to}}
+        </div>
+        <ul class="nav navbar-nav pull-right">
+            <li>
+                {{#link-to 'add'}}<span class="glyphicon glyphicon-plus"></span> Add Brand{{/link-to}}
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="main" class="container">{{outlet}}</div>
