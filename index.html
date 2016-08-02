@@ -1,0 +1,240 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AllMeet -- Brands</title>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- <script src="http://localhost:9090/livereload.js"></script> -->
+    </head>
+    <body>
+        <script type="text/x-handlebars">
+            <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        {{#link-to 'index' class='navbar-brand'}}Brands{{/link-to}}
+                    </div>
+                    <ul class="nav navbar-nav pull-right">
+                        <li>
+                            {{#link-to 'add'}}<span class="glyphicon glyphicon-plus"></span> Add Brand{{/link-to}}
+                        </li>
+                        <li><a href="javascript:void(0);" {{action 'clearDB'}}><span class="glyphicon glyphicon-trash"></span> ClearData</a></li>
+                        <li><a href="javascript:void(0);" {{action 'deleteDB'}}>DeleteDB</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="main" class="container">{{outlet}}</div>
+        </script>
+
+        <script type="text/x-handlebars" id="index">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">Name</div>
+                                <input type="text" class="form-control" id="nameKey" placeholder="name">
+                            </div>
+                        </div>
+                        <a class="btn btn-default" {{action 'search'}}>Search</a>
+                    </form>
+                </div>
+            </div><br/>
+            <div class="row">
+                <!-- Foo is {{foo}}<button {{action 'change'}}>Change it</button>. -->
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <th>Country</th>
+                                <!-- <th>Time</th> -->
+                                <th>Operate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each model as |item|}}
+                            <tr>
+                                <td>{{#link-to 'detail' item.id (query-params category=item.id)}}{{item.brandName}}{{/link-to}}</td>
+                                <td>{{item.brandCode}}</td>
+                                <td>{{item.country}}</td>
+                                <!-- <td><small class="muted pull-right">{{format-date item.createTime}}</small></td> -->
+                                <td>
+                                    {{#link-to 'update' item}}修改{{/link-to}}
+                                    <a href="javascript:void(0);" {{action 'delete' item}}>删除</a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-handlebars" id="list">
+            <div class="row">
+                <div class="col-md-4">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <th>Country</th>
+                                <!-- <th>Time</th> -->
+                                <th>Operate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each model as |item|}}
+                            <tr>
+                                <td>{{#link-to 'detail' item.id (query-params category=item.id)}}{{item.brandName}}{{/link-to}}</td>
+                                <td>{{item.brandCode}}</td>
+                                <td>{{item.country}}</td>
+                                <!-- <td><small class="muted pull-right">{{format-date item.createTime}}</small></td> -->
+                                <td>
+                                    {{#link-to 'update' item}}修改{{/link-to}}
+                                    <a href="javascript:void(0);" {{action 'delete' item}}>删除</a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-8">{{outlet}}</div>
+            </div>
+        </script>
+
+        <script type="text/x-handlebars" id="detail">
+            <div class="row border-b">
+                <h3><span class="col-md-2">Logo:</span><span>{{model.brandLogo}}</span></h3>
+            </div>
+            <div class="row border-b">
+                <h3><span class="col-md-2">Name:</span><span>{{model.brandName}}</span></h3>
+            </div>
+            <div class="row border-b">
+                <h3><span class="col-md-2">Code:</span><span>{{model.brandCode}}</span></h3>
+            </div>
+            <div class="row border-b">
+                <h3><span class="col-md-2">Country:</span><span>{{model.country}}</span></h3>
+            </div>
+            <div class="row border-b">
+                <h3><span class="col-md-2">Remark:</span><span class="v-remark"></span></h3>
+            </div>
+            <div class="row">
+                <h3><span class="col-md-2">Time:</span><span class="v-createTime"></span></h3>
+            </div>
+        </script>
+
+        <script type="text/x-handlebars" id="add">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="logo" class="col-md-2 control-label">Logo</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="brandLogo" name="brandLogo" placeholder="logo" required>
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <label for="name" class="col-md-2 control-label">Name</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="brandName" name="brandName" placeholder="name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="code" class="col-md-2 control-label">Code</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="brandCode" name="brandCode" placeholder="code" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="col-md-2 control-label">Country</label>
+                    <div class="col-md-10">
+                        <select class="form-control" id="country" name="country" required>
+                            <option>中国</option>
+                            <option>美国</option>
+                            <option>德国</option>
+                            <option>法国</option>
+                            <option>英国</option>
+                            <option>日本</option>
+                            <option>韩国</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tags" class="col-md-2 control-label">Remark</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="remark" name="remark" placeholder="remark" rows="5" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn btn-success" {{action 'save'}}>Submit</button>
+                        <button type="submit" class="btn btn-default" {{action 'goback'}}>Back</button>
+                    </div>
+                </div>
+            </form>
+        </script>
+
+        <script type="text/x-handlebars" id="update">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="logo" class="col-md-2 control-label">Logo</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="brandLogo" name="brandLogo" placeholder="logo" value="{{model.brandLogo}}" required>
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <label for="name" class="col-md-2 control-label">Name</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="brandName" name="brandName" placeholder="name" value="{{model.brandName}}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="code" class="col-md-2 control-label">Code</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="brandCode" name="brandCode" placeholder="code" value="{{model.brandCode}}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="col-md-2 control-label">Country</label>
+                    <div class="col-md-10">
+                        <select class="form-control" id="country" name="country" required>
+                            <option>中国</option>
+                            <option>美国</option>
+                            <option>德国</option>
+                            <option>法国</option>
+                            <option>英国</option>
+                            <option>日本</option>
+                            <option>韩国</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tags" class="col-md-2 control-label">Remark</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="remark" name="remark" placeholder="remark" rows="5" required>{{model.remark}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn btn-success" {{action 'update' model}}>Submit</button>
+                        <button type="submit" class="btn btn-default" {{action 'goback'}}>Back</button>
+                    </div>
+                </div>
+            </form>
+        </script>
+
+        <script src="js/libs/jquery.min.js"></script>
+        <script src="js/libs/handlebars.min.js"></script>
+        <script src="js/libs/ember-template-compiler.js"></script>
+        <script src="js/libs/ember.min.js"></script>
+        <script src="js/libs/ember-data.min.js"></script>
+        <script src="js/libs/localstorage_adapter.js"></script>
+        <script src="js/libs/moment.min.js"></script>
+        <!-- <script src="app/router.js"></script> -->
+        <script src="build/app.js"></script>
+        <!-- <script src="app/templates.js"></script>
+        <script src="app/routes/index.js"></script> -->
+    </body>
+</html>

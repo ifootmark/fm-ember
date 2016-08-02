@@ -1,0 +1,110 @@
+﻿@charset "UTF-8";
+body {padding:0;margin: 0; font-family: "Microsoft YaHei" Arial; color: #333333; background-color: #FFF !important; }
+.header{position: fixed; width:100%; height: 49px;background: #F5F5F5;border-bottom: solid 1px #E5E5E5;}
+.header-content{margin:0 200px;}
+.header-brand{display:inline-block; height: 50px;line-height: 50px; font-size: 24px;font-weight: bold;}
+.icontainer{padding: 50px 0; margin: 0 200px;line-height:150%;}
+.profile{padding:0 0 50px;}
+.grayline { width: 100%; height: 1px; background-color: #D8D8D8; }
+.clear { clear: both; }
+.contheight { height: 10px; }
+.iblock { width: 100%; background-color: #FCFCFC; border-top: solid 1px #D8D8D8; border-bottom: solid 1px #D8D8D8; }
+.irow { padding: 10px 0; }
+.iflex { display: -moz-box; display: -webkit-box; display: box; }
+.item_im { width: 50%; padding: 0 10px; text-align: center; -moz-box-flex: 1; -webkit-box-flex: 1; box-flex: 1; }
+/*============ start ============*/
+.mt5{margin-top:5px !important;}
+.mt10{margin-top:10px !important;}
+.mt20{margin-top:20px !important;}
+.mt30{margin-top:30px !important;}
+.mt50{margin-top:50px !important;}
+.ml5{margin-left:5px !important;}
+.ml10{margin-left:10px !important;}
+.ml20{margin-left:20px !important;}
+.ml30{margin-left:30px !important;}
+.ml50{margin-left:50px !important;}
+.ml100{margin-left:100px !important;}
+.mb5{margin-bottom:5px !important;}
+.mb10{margin-bottom:10px !important;}
+.mb20{margin-bottom:20px !important;}
+.mb30{margin-bottom:30px !important;}
+.mb50{margin-bottom:50px !important;}
+.mb60{margin-bottom:60px !important;}
+.mr10{margin-right:10px !important;}
+.mr15{margin-right:15px !important;}
+.mg20 {margin-left: 20px !important;}
+.mg30 {margin-left: 30px !important;}
+.mg50 {margin-left: 50px !important;}
+.mg150 {margin-left: 150px !important;}
+.pr50 {padding-right: 50px !important;}
+.pt5{padding-top:5px !important;}
+.pt10{padding-top:10px !important;}
+.pt20{padding-top:20px !important;}
+.pt30{padding-top:30px !important;}
+.pl5{padding-left:5px !important;}
+.pl10{padding-left:10px !important;}
+.pl20{padding-left:20px !important;}
+.pl30{padding-left:30px !important;}
+.pl40{padding-left:40px !important;}
+.pl50{padding-left:50px !important;}
+.pl80{padding-left:80px !important;}
+.pb5{padding-bottom:5px !important;}
+.pb10{padding-bottom:10px !important;}
+.pb20{padding-bottom:20px !important;}
+.pb30{padding-bottom:30px !important;}
+.pb60{padding-bottom:60px !important;}
+.indent0{text-indent:0px !important;}
+.indent10{text-indent:10px !important;}
+.indent15{text-indent:15px !important;}
+.indent20{text-indent:20px !important;}
+.indent25{text-indent:25px !important;}
+.indent40{text-indent:40px !important;}
+.indent60{text-indent:60px !important;}
+.bold{font-weight:bold !important;}
+.bg-white{background-color: #ffffff !important;}
+.bg-red {background: #E05658 !important;}
+.bg-gray {background: #999 !important;}
+.bg-blue{background: #337AB7 !important;}
+.bg-yellow{background: #E4821F !important;}
+.bg-green{background: #4aaf51 !important;}
+.color-gray{color: #999 !important;}
+.color-red{color: #f00 !important;}
+.color-green{color: #4aaf51 !important;}
+.color-blue{color: #337AB7 !important;}
+.color-yellow{color: #E4821F !important;}
+/*============ end ============*/
+.text-center{text-align: center;}
+.ift-header{font-weight: bold;}
+.ift-tbl table {width: 100%; border-right: solid 1px #E5E5E5;border-bottom: solid 1px #E5E5E5;}
+.ift-tbl table tr th{background-color: #F5F5F5;font-weight: normal;}
+.ift-tbl table tr td,th{border-left: solid 1px #E5E5E5;border-top: solid 1px #E5E5E5;padding: 5px;}
+li header{padding: 10px 0; font-weight: bold;}
+li p{padding: 0;margin: 0;}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color:#333;
+}
+a:hover{
+    color: #38B8F2;
+}
+input{outline: none; border: 1px solid #ccc; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; }
+input:focus,select:focus{border: 1px solid #999;}
+input:focus::-webkit-input-placeholder { color: transparent; }
+input::-moz-focus-inner, input::-moz-focus-outer { border: 0 none; padding: 0; margin: 0; }
+input[type=button], input[type=submit] { 
+    min-width: 50px;
+    height: 38px;
+    line-height: 38px;
+    cursor: pointer; 
+    padding: 0 12px;
+    border-radius: 5px;
+}
+input[type=text]{
+    width: 200px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    text-indent: 10px;
+    font-size: 14px;
+}
